@@ -1,6 +1,7 @@
 package org.xpdojo.bank;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +11,22 @@ public class AccountTest {
   public void anAccountHasAnInitialBalanceOfZeroByDefault() {
     Account account = new Account();
     assertThat(account.getBalance()).isEqualTo(0);
+  }
+
+  @Test
+  public void anAccountCanBeOpenedWithAPositiveBalance() {
+    Account account = new Account(100);
+    assertThat(account.getBalance()).isEqualTo(100);
+  }
+
+  @Test
+  public void anAccountCanNotBeOpenedWithANegativeBalance() {
+    try {
+      new Account(-1);
+      fail("Missing exception");
+    } catch (IllegalArgumentException e) {
+
+    }
   }
 
   @Test

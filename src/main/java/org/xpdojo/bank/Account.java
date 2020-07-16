@@ -4,6 +4,17 @@ public class Account {
 
   public int balance;
 
+  public Account() {
+    balance = 0;
+  }
+
+  public Account(int initialBalance) {
+    if (initialBalance < 0) {
+      throw new IllegalArgumentException();
+    }
+    balance = initialBalance;
+  }
+
   public int getBalance() {
     return balance;
   }
