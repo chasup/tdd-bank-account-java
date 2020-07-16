@@ -58,4 +58,15 @@ public class AccountTest {
     assertThat(account.getBalance()).isEqualTo(90);
   }
 
+  @Test
+  public void withdrawingAnAmountShouldThrowIfBalanceIsNotAvailable(){
+    Account account = new Account(10);
+    try {
+      account.withdraw(100);
+      fail("Missing exception");
+    } catch (IllegalArgumentException e) {
+
+    }
+  }
+
 }
