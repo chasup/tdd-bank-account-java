@@ -51,4 +51,11 @@ public class AccountTest {
     }
   }
 
+  @Test
+  public void withdrawingAnAmountShouldWorkIfBalanceIsAvailable(){
+    Account account = new Account(100);
+    account.withdraw(10);
+    assertThat(account.getBalance()).isEqualTo(90);
+  }
+
 }
