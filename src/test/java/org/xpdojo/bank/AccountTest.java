@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class AccountTest {
 
   @Test
-  public void anAccountHasAnInitialBalanceOfZero() {
+  public void anAccountHasAnInitialBalanceOfZeroByDefault() {
     Account account = new Account();
     assertThat(account.getBalance()).isEqualTo(0);
   }
