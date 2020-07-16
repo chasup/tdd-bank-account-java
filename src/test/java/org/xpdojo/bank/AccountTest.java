@@ -17,11 +17,13 @@ public class AccountTest {
     Account account = new Account();
 
     account.deposit(10);
-
     assertThat(account.getBalance()).isEqualTo(10);
+
+    account.deposit(5);
+    assertThat(account.getBalance()).isEqualTo(15);
   }
 
-  @Test()
+  @Test
   public void depositingANegativeAmountShouldThrow() {
     Account account = new Account();
     try {
