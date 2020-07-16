@@ -19,6 +19,17 @@ public class AccountTest {
     account.deposit(10);
 
     assertThat(account.getBalance()).isEqualTo(10);
-
   }
+
+  @Test()
+  public void depositingANegativeAmountShouldThrow() {
+    Account account = new Account();
+    try {
+      account.deposit(-10);
+      assertThat(account.getBalance()).isEqualTo(0);
+    } catch (IllegalArgumentException e) {
+
+    }
+  }
+
 }
